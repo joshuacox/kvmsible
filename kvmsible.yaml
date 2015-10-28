@@ -13,5 +13,11 @@
     apt: name=virtinst state=present
   - name: Install fail2ban
     apt: name=fail2ban state=present
+  - name: Install unzip
+    apt: name=unzip state=present
+  - name: Install byobu
+    apt: name=byobu state=present
+  - name: Install build-essential
+    apt: name=build-essential state=present
   - name: install packer
     script: packer.sh --some-arguments 1234
