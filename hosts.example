@@ -1,0 +1,4 @@
+kvmhost ansible_ssh_port=16222 ansible_ssh_host=IPaddress ansible_ssh_user=root
+
+[kvm]
+kvmhost

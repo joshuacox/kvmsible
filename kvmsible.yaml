@@ -1,8 +1,17 @@
 # Roles
 - name: kvmsible
-  hosts: packer
+  hosts: kvm
   user: root
-  roles:
-    - packer
-  vars:
-    - packer_version: '0.7.5'
+  tasks:
+  - name: update cache
+    apt: update_cache=yes cache_valid_time=3600
+  - name: Install kvm
+    apt: name=qemu-kvm state=present
+  - name: Install libvirt-bin
+    apt: name=libvirt-bin state=present
+  - name: Install virtinst
+    apt: name=virtinst state=present
+  - name: Install fail2ban
+    apt: name=fail2ban state=present
+  - name: install packer
+    script: packer.sh --some-arguments 1234
