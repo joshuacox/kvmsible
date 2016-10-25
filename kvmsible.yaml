@@ -1,6 +1,6 @@
 # Roles
 - name: kvmsible
-  hosts: kvm
+  hosts: kvmsible
   user: root
   tasks:
   - name: update cache
@@ -17,6 +17,14 @@
     apt: name=unzip state=present
   - name: Install byobu
     apt: name=byobu state=present
+  - name: Install build-essential
+    apt: name=vim state=present
+  - name: Install build-essential
+    apt: name=rsync state=present
+  - name: Install build-essential
+    apt: name=git state=present
+  - name: Install build-essential
+    apt: name=shorewall state=present
   - name: Install build-essential
     apt: name=build-essential state=present
   - name: install packer

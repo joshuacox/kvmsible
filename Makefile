@@ -21,3 +21,6 @@ NAME:
 	@while [ -z "$$NAME" ]; do \
 		read -r -p "Enter the name you wish to associate with this  [NAME]: " NAME; echo "$$NAME">>NAME; cat NAME; \
 	done ;
+
+bootstrap:
+	ansible-playbook bootstrapAnsible.yaml
